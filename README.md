@@ -35,8 +35,7 @@ grunt
 ```
 
 
-
-## Frontend Guidelines:
+## Snippets:
 
 * Bootstrap [grid examples](http://jsfiddle.net/ElmahdiMahmoud/k7n5E/2/embedded/result/)
 * [Helper classes](#helper-classes)
