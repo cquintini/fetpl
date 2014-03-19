@@ -1,0 +1,190 @@
+// ============[ @mixins ]============
+
+// Color and Background rgba with fallback
+@mixin alpha-variant($property, $color, $alpha) {
+    $rgba: rgba($color, $alpha);
+    $ie-hex-str: ie-hex-str($rgba);
+  
+    @if $property == color {
+      color: $color;
+      color: $rgba;
+    }
+    
+    @else if $property == bg , background {
+      background-color: transparent;
+      background-color: $rgba;
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+      zoom: 1;
+    }
+}
+
+
+// keyframes Mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} { @content; }
+  @-moz-keyframes #{$name}    { @content; }
+  @-ms-keyframes #{$name}     { @content; }
+  @keyframes #{$name}         { @content; } 
+}
+
+// Vendor Prefixing
+@mixin vendorize($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+// Rounded Box
+@mixin circle($size) {
+     width: $size;
+     height: $size;
+     @include border-radius(100%); 
+     overflow: hidden;
+}
+
+// #breakpoint
+@mixin breakpoint($point) {
+
+  // mid-devices = 998px and below
+  @if $point == mid-devices {
+    @media (max-width: $midDevices) { @content; }
+  }
+  
+  // mid-devices = 1150px and below
+  @if $point == range-screen {
+    @media (max-width: $rangeSize) { @content; }
+  }
+
+  // large-screen = 1200 and above
+  @else if $point == large-screen {
+    @media (min-width: $largeScreen) { @content; }
+  } 
+
+  // desktop = 1200 and below
+  @else if $point == desktop {
+    @media (max-width: $largeScreen) { @content; }
+  } 
+
+  // tablet = 768px and below
+  @else if $point == tablet {
+    @media (max-width: $tablet) { @content; }
+  }
+  
+  // small devices = 660px and below
+  @else if $point == sm-devices {
+    @media (max-width: $smDevices) { @content; }
+  }
+
+  // mobile = 480 and below
+  @else if $point == mobile {
+    @media (max-width: $landtoPort)  { @content; }
+  } 
+}
+                    
+
+// #triangle
+@mixin triangle($dir, $color, $size) {
+ 
+  @if $dir == "left" {
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+    border-top: $size solid transparent;
+  }
+  @else if $dir == "right" {
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    border-top: $size solid transparent;
+  }
+  @else if $dir == "up" {
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+  }
+  @else if $dir == "down" {
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+    border-top: $size solid $color;
+  }
+ 
+  height: 0;
+  width: 0;
+}
+
+// #truncate text
+@mixin text-truncate($boxSize) {
+    width: $boxSize;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+$position-default-top:    null !default;
+$position-default-right:  null !default;
+$position-default-bottom: null !default;
+$position-default-left:   null !default;
+
+
+@mixin _position($type,
+$top: $position-default-top, $right: $position-default-right,
+$bottom: $position-default-bottom, $left: $position-default-left) {
+  $allowed_types: 'absolute' 'relative' 'fixed';
+
+  @if not index($allowed_types, $type) {
+    @warn "Unknow position: #{$type}.";
+  }
+
+  position: $type;
+  @each $data in top $top, right $right, bottom $bottom, left $left {
+    #{nth($data, 1)}: nth($data, 2);
+  }
+}
+
+@mixin absolute($top: $position-default-top, $right: $position-default-right,
+$bottom: $position-default-bottom, $left: $position-default-left) {
+  @include _position(absolute, $top, $right, $bottom, $left);
+}
+
+@mixin relative($top: $position-default-top, $right: $position-default-right,
+$bottom: $position-default-bottom, $left: $position-default-left) {
+  @include _position(relative, $top, $right, $bottom, $left);
+}
+
+@mixin fixed($top: $position-default-top, $right: $position-default-right,
+$bottom: $position-default-bottom, $left: $position-default-left) {
+  @include _position(fixed, $top, $right, $bottom, $left);
+}
+
+// ============[ @functions ]============
+// #Black & White
+
+@function black($opacity){
+    @return rgba(0,0,0,$opacity)
+}
+@function white($opacity){
+    @return rgba(250,250,250,$opacity)
+}
+
+// Usage
+// background: black(.15);
+// color: white(.9);
+
+
+// #calculation 
+
+@function calc-addPixels($some-number, $another-number){
+  @return $some-number + $another-number
+}
+
+@function calc-subPixels($some-number, $another-number){
+  @return $some-number - $another-number
+}
+
+@function calc-divPixels($some-number, $another-number){
+  @return $some-number / $another-number
+}
+
+@function calc-percent($target, $container) {
+  @return ($target / $container) * 100%;
+}

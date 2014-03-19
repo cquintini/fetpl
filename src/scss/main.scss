@@ -1,0 +1,39 @@
+/*
+ * Author: @ElmahdiMahmoud
+ * Date: 19.03.14
+ *
+ * https://github.com/ikantam/fetpl
+ *
+ */
+ 
+/*!
+ * Compass
+ *	 
+ * CSS Authoring Framework.
+ */
+@import "compass", 
+		"compass/css3";
+		
+/*!
+ *	Base
+ *	 
+ * fonts, scss (functions, mixins, variables).
+ */
+@import "base/all";
+
+/*!
+ * Modules
+ *	 
+ * Individual, repeatable module styling.
+ */
+@import "modules/all";	
+
+/*!
+ * Tools
+ *	 
+ * tools are helper classes and miscellaneous setup.
+ */
+@import "tools/all";	
+
+
+

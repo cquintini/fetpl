@@ -1,0 +1,49 @@
+// # Miscellaneous 
+
+// #old browser notification
+#browser-status {
+  background-color: #fef1b6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 7px;
+  text-align: center;
+  color: #000000;
+  font: normal 13px/100% Arial, san-serif;
+  z-index: 9999;
+  border-bottom: 1px solid #736a60;
+  a {
+    color: #1c1c1c;
+    font-weight: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+    background-color: #f8f6f4;
+    border: 1px solid #736a60;
+    padding: 6px 10px;
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
+input::-moz-focus-inner { border: 0; }
+*:focus { outline: 0; }
+a img   { border: 0; }
+a:active, a:focus { outline:none; }
+@media \0screen   { img { width: auto; } }
+
+body, 
+input:focus,
+textarea:focus {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+::-moz-selection {
+    background: #333;
+    color: #fff;
+    text-shadow: none;
+}
+::selection {
+    background: #333;
+    color: #fff;
+    text-shadow: none;
+}

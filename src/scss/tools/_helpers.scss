@@ -1,0 +1,140 @@
+// ** Updated: 15.02.14 **
+
+// #text
+.text-uc { text-transform: uppercase; }
+.text-ul { 
+  text-decoration: underline;   
+  &:hover { text-decoration: none; }
+}
+.text-lt { text-decoration: line-through;}
+
+// #clearfix
+%clearfix {
+    zoom:1;
+    &:before, &:after {
+        height: 0;
+        display: block;
+        content: "\0020";
+        overflow: hidden;
+    }
+    &:after { clear: both; }
+}
+
+// #clear floats
+.clear    { 
+    display: block !important; 
+    visibility: hidden; 
+    font-size: 0; 
+    content: " "; 
+    clear: both; 
+    height: 0; 
+}
+
+// #positions 
+.pos-fxd { position: fixed; }
+.pos-rlv { position: relative; }
+
+// #margin
+.m-0 { margin: 0; }
+@for $i from 1 through 30 { .m-#{$i} { margin: 1px * $i; } }
+@for $i from 1 through 30 { .m--#{$i} { margin: -1px * $i; } }
+
+// #margin-top
+@for $i from 1 through 30 { .m-t#{$i} { margin-top: 1px * $i; } }
+@for $i from 1 through 30 { .m--t#{$i} { margin-top: -1px * $i; } }
+
+// #margin-top ; #margin-right
+@for $i from 1 through 30 { .m-tr#{$i} { margin-top: 1px * $i; margin-right: 1px * $i;  } }
+@for $i from 1 through 30 { .m--tr#{$i} { margin-top: -1px * $i; margin-right: -1px * $i;  } }
+
+// #margin-top ; #margin-bottom
+@for $i from 1 through 30 { .m-tb#{$i} { margin-top: 1px * $i; margin-bottom: 1px * $i; } }
+@for $i from 1 through 30 { .m--tb#{$i} { margin-top: -1px * $i; margin-bottom: -1px * $i; } }
+
+// #margin-top ; #margin-left
+@for $i from 1 through 30 { .m-tl#{$i} { margin-top: 1px * $i; margin-left: 1px * $i;   } }
+@for $i from 1 through 30 { .m--tl#{$i} { margin-top: -1px * $i; margin-left: -1px * $i;   } }
+
+
+// #margin-right
+@for $i from 1 through 30 { .m-r#{$i} { margin-right: 1px * $i; } }
+@for $i from 1 through 30 { .m--r#{$i} { margin-right: -1px * $i; } }
+
+// #margin-right ; #margin-bottom
+@for $i from 1 through 30 { .m-rb#{$i} { margin-right: 1px * $i; margin-bottom: 1px * $i; } }
+@for $i from 1 through 30 { .m--rb#{$i} { margin-right: -1px * $i; margin-bottom: -1px * $i; } }
+
+// #margin-right ; #margin-left
+@for $i from 1 through 30 { .m-rl#{$i} { margin-right: 1px * $i; margin-left: 1px * $i; } }
+@for $i from 1 through 30 { .m--rl#{$i} { margin-right: -1px * $i; margin-left: -1px * $i; } }
+
+// #margin-bottom
+@for $i from 1 through 30 { .m-b#{$i} { margin-bottom: 1px * $i; } }
+@for $i from 1 through 30 { .m--b#{$i} { margin-bottom: -1px * $i; } }
+
+// #margin-bottom ; #margin-left 
+@for $i from 1 through 30 { .m-bl#{$i}  { margin-bottom: 1px * $i; margin-left: 1px * $i; } }
+@for $i from 1 through 30 { .m--bl#{$i} { margin-bottom: -1px * $i; margin-left: -1px * $i; } }
+
+// #margin-left
+@for $i from 1 through 30 { .m-l#{$i}  { margin-left: 1px * $i; } }
+@for $i from 1 through 30 { .m--l#{$i} { margin-left: -1px * $i; } }
+
+// #padding
+.p-0 { padding: 0; }
+@for $i from 1 through 30 { .p-#{$i} { padding: 1px * $i; } }
+
+// #padding-top
+@for $i from 1 through 30 { .p-t#{$i} { padding-top: 1px * $i; } }
+
+// #padding-top ; #padding-right
+@for $i from 1 through 30 { .p-tr#{$i} { padding-top: 1px * $i; padding-right: 1px * $i; } }
+// #padding-top ; #padding-bottom
+@for $i from 1 through 30 { .p-tb#{$i} { padding-top: 1px * $i; padding-bottom: 1px * $i; } }
+// #padding-top ; #padding-left
+@for $i from 1 through 30 { .p-tl#{$i} { padding-top: 1px * $i; padding-left: 1px * $i; } }
+
+// #padding-right
+@for $i from 1 through 30 { .p-r#{$i} { padding-right: 1px * $i; } }
+// #padding-right ; #padding-bottom
+@for $i from 1 through 30 { .p-rb#{$i} { padding-right: 1px * $i; padding-bottom: 1px * $i; } }
+// #padding-right ; #padding-left
+@for $i from 1 through 30 { .p-rl#{$i} { padding-right: 1px * $i; padding-left: 1px * $i; } }
+
+// #padding-bottom
+@for $i from 1 through 30 { .p-b#{$i} { padding-bottom: 1px * $i; } }
+// #padding-bottom ; #padding-left
+@for $i from 1 through 30 { .p-bl#{$i} { padding-bottom: 1px * $i; padding-left: 1px * $i; } }
+
+// #padding-left
+@for $i from 1 through 30 { .p-l#{$i} { padding-left: 1px * $i; } }
+
+// #top
+@for $i from 1 through 30 { .t-#{$i}  { top: 1px * $i; } }
+@for $i from 1 through 30 { .t--#{$i} { top: -1px * $i; } }
+
+// #right
+@for $i from 1 through 30 { .r-#{$i}  { right: 1px * $i; } }
+@for $i from 1 through 30 { .r--#{$i} { right: -1px * $i; } }
+
+// #bottom
+@for $i from 1 through 30 { .b-#{$i}  { bottom: 1px * $i; } }
+@for $i from 1 through 30 { .b--#{$i} { bottom: -1px * $i; } }
+
+// #left
+@for $i from 1 through 30 { .l-#{$i} { left: 1px * $i; } }
+@for $i from 1 through 30 { .l--#{$i} { left: -1px * $i; } }
+
+// #center block elements
+%center-block {
+  float: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// #img-center
+%img-center {
+  margin: auto;
+  @include pos-abs(0, 0 ,0, 0);
+}
