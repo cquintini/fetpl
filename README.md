@@ -40,6 +40,7 @@ grunt
 * Bootstrap [grid examples](http://jsfiddle.net/ElmahdiMahmoud/k7n5E/2/embedded/result/)
 * [Helper classes](#helper-classes)
   * [Text helper classes](#text-helper-classes)
+  * [Blocks](#blocks)
 * [SCSS snippets](#scss-snippets)
   * [Breakpoint](#breakpoint)
   * [Alpha variant](#alpha-variant)
@@ -69,6 +70,10 @@ Alignment
 <tag class="text-left">
 ```
 
+#### Blocks
+```html
+<tag class="block-center">
+```
 
 #### SCSS snippets
 
