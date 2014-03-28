@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 				},
 				dist: {
 					src: ['src/js/*.js'],
-					dest: 'dist/js/main.js',
+					dest: 'dest/js/main.js',
 					nonull: true,
 				}
 			},
@@ -18,7 +18,7 @@ module.exports = function (grunt) {
 					options: {
 						noLineComments: true,
 						sassDir: 'src/scss',
-						cssDir: 'dist/css'
+						cssDir: 'dest/css'
 					}
 				}
 			},
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
 							expand: true,
 							cwd: 'src/images/',
 							src: ['**/*.{png,jpg,gif}'],
-							dest: 'dist/images/'
+							dest: 'dest/images/'
 						}
 					]
 				}
@@ -45,14 +45,14 @@ module.exports = function (grunt) {
 				},
 				my_target: {
 					files: {
-						'dist/js/main.min.js': ['dist/js/main.js']
+						'dest/js/main.min.js': ['dest/js/main.js']
 					}
 				}
 			},
 			uncss: {
 			  dist: {
 				files: {
-				  'dist/css/tidy.css': ['app/index.html', 'app/about.html']
+				  'dest/css/main.css': ['index.html']
 				}
 			  }
 			},
