@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 				},
 				dist: {
 					src: ['src/js/*.js'],
-					dest: 'dest/js/main.js',
+					dest: 'dist/js/main.js',
 					nonull: true,
 				}
 			},
@@ -18,7 +18,7 @@ module.exports = function (grunt) {
 					options: {
 						noLineComments: true,
 						sassDir: 'src/scss',
-						cssDir: 'dest/css'
+						cssDir: 'dist/css'
 					}
 				}
 			},
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
 							expand: true,
 							cwd: 'src/images/',
 							src: ['**/*.{png,jpg,gif}'],
-							dest: 'dest/images/'
+							dest: 'dist/images/'
 						}
 					]
 				}
@@ -45,11 +45,17 @@ module.exports = function (grunt) {
 				},
 				my_target: {
 					files: {
-						'dest/js/main.min.js': ['dest/js/main.js']
+						'dist/js/main.min.js': ['dist/js/main.js']
 					}
 				}
 			},
-
+			uncss: {
+			  dist: {
+				files: {
+				  'dist/css/tidy.css': ['app/index.html', 'app/about.html']
+				}
+			  }
+			},
 			/* ======[ configuration ]====== */
 			watch: {
 				css: {
@@ -84,6 +90,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-uncss');
 
     grunt.registerTask('default',['watch']);
     //grunt.registerTask('default', ['uglify']);

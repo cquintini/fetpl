@@ -5530,85 +5530,6 @@ body {
   left: -30px;
 }
 
-.layout.main-sidebar .main {
-  float: left;
-}
-.layout.main-sidebar .sidebar {
-  float: right;
-}
-.layout.sidebar-main .main {
-  float: right;
-}
-.layout.sidebar-main .sidebar {
-  float: left;
-}
-.layout.sidebar-main-sidebar .sidebar {
-  float: left;
-}
-.layout.sidebar-main-sidebar .main {
-  float: left;
-}
-.layout.sidebar-main-sidebar .main + .sidebar {
-  float: left;
-}
-@media (max-width: 768px) {
-  .layout .main,
-  .layout .sidebar {
-    float: none;
-  }
-}
-
-.banner {
-  overflow: hidden;
-  position: relative;
-}
-.banner.intro .banner-holder {
-  height: 760px;
-  -webkit-background-size: cover !important;
-  -moz-background-size: cover !important;
-  -o-background-size: cover !important;
-  background-size: cover !important;
-}
-.banner.intro .navbar {
-  border: 0;
-  padding: 25px 0;
-  margin-bottom: 0;
-  top: auto;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  background-color: transparent;
-  background-color: rgba(38, 54, 70, 0.3);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D263646,endColorstr=#4D263646);
-  zoom: 1;
-}
-
-.banner {
-  overflow: hidden;
-  position: relative;
-}
-.banner.intro .banner-holder {
-  height: 760px;
-  -webkit-background-size: cover !important;
-  -moz-background-size: cover !important;
-  -o-background-size: cover !important;
-  background-size: cover !important;
-}
-.banner.intro .navbar {
-  border: 0;
-  padding: 25px 0;
-  margin-bottom: 0;
-  top: auto;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  background-color: transparent;
-  background-color: rgba(38, 54, 70, 0.3);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D263646,endColorstr=#4D263646);
-  zoom: 1;
-}
 
 #browser-status {
   background-color: #fef1b6;
@@ -5672,24 +5593,4 @@ textarea:focus {
   background: #333;
   color: #fff;
   text-shadow: none;
-}
-
-/* [ transitions ] */
-.spin {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-.spin.on-load {
-  -webkit-transform: rotate(-180deg);
-  -moz-transform: rotate(-180deg);
-  -ms-transform: rotate(-180deg);
-  -o-transform: rotate(-180deg);
-  transform: rotate(-180deg);
 }
