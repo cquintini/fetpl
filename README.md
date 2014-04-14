@@ -47,7 +47,7 @@ grunt
   * [Positions](#positions)
   * [CSS3 Transition and Transform](#css3-transition-and-transform)
   * [Background](#background)
-
+* [Js snippets](#js-snippets)
 #### Helper classes
 
 Text helper classes
@@ -128,13 +128,32 @@ Alpha variant is opacity `color` or `background` with fallback for old browsers.
 /* gradient background */
 @include background-image(linear-gradient(rgba(250,250,250,.8), rgba(204, 204, 204,.7)));
 ```
-    
+
+
+##### Js snippets
+
+###### [Toggle](http://jsfiddle.net/ElmahdiMahmoud/gkXVF/2/)
+```html
+<tag class="set-togg" data-getter="any">Toggle</tag>
+<tag data-setter="any" class="is-hidden"></tag>
+```
+```js
+$('.set-togg').on('click', function () {
+    var $this = $(this),
+        _dGet = $this.attr('data-getter'),
+        _dSet = $('[data-setter=' + _dGet + ']');
+
+    _dSet.toggleClass('is-hidden');
+
+    return false;
+});
+```
 
 ---
 
 ## Contributors
 
 - [@ElmahdiMahmoud](https://twitter.com/ElmahdiMahmoud)
-- [http://www.ikantam.com/](http://www.ikantam.com/)
+- [@IkantamCorp](http://www.ikantam.com/)
 
 
