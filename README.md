@@ -48,6 +48,7 @@ grunt
   * [CSS3 Transition and Transform](#css3-transition-and-transform)
   * [Background](#background)
 * [Js snippets](#js-snippets)
+
 #### Helper classes
 
 Text helper classes
@@ -132,7 +133,7 @@ Alpha variant is opacity `color` or `background` with fallback for old browsers.
 
 ##### Js snippets
 
-###### [Toggle](http://jsfiddle.net/ElmahdiMahmoud/gkXVF/2/)
+###### Toggle
 ```html
 <tag class="set-togg" data-getter="any">Toggle</tag>
 <tag data-setter="any" class="is-hidden"></tag>
@@ -148,6 +149,7 @@ $('.set-togg').on('click', function () {
     return false;
 });
 ```
+[Toggle demo](http://jsfiddle.net/ElmahdiMahmoud/gkXVF/2/)
 
 ---
 
