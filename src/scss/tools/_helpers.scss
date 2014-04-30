@@ -1,12 +1,18 @@
-// ** Updated: 15.02.14 **
+// [ helper classes ]
 
 // #text
 .text-uc { text-transform: uppercase; }
+.text-lt { text-decoration: line-through;}
 .text-ul { 
   text-decoration: underline;   
   &:hover { text-decoration: none; }
 }
-.text-lt { text-decoration: line-through;}
+
+// #color state
+.color-state {
+  &.is-primary {  }
+  &.is-meta    {  }
+}
 
 // #clearfix
 %clearfix {
@@ -136,5 +142,5 @@
 // #img-center
 %img-center {
   margin: auto;
-  @include pos-abs(0, 0 ,0, 0);
+  @include absolute(0, 0 ,0, 0);
 }
