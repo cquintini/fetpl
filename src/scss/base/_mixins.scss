@@ -18,6 +18,14 @@
     }
 }
 
+// [ icon: size and background position ]
+@mixin icon($h, $w, $bp) {
+  width: $w;
+  height: $h;
+  background-position: $bp;
+}
+// Usgae: @include icon(20px, 10px, 20px 40px);
+
 // Center an element with absolute position 
 @mixin abs-center($dir, $el-width, $el-height) {
   position: absolute;
