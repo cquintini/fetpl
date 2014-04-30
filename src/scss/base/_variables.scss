@@ -1,15 +1,15 @@
-// ============[ Variables ]============
+// [ Variables ]
 
 // #avatars
-$avatarLrg: 100px;
-$avatarMid: calc-subPixels($avatarLrg, 24px);
-$avatarSml:  calc-subPixels($avatarLrg, 65px);
+$avatar-lrg: null;
+$avatar-mid: null;
+$avatar-sml: null;
 
 // #colors
-$color-brand: #263646;
-$base-color: #666;
+$color-brand: null;
+$color-base : null;
 
-// #view port
+// #break points
 $largeScreen: 1200px;
 $midDevices : 998px;
 $tablet 	  : 768px;
