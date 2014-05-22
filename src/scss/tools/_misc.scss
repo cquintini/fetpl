@@ -14,22 +14,20 @@
   
   a {
     color: #1c1c1c;
+    padding: 6px 10px;
+    margin-left: 10px;
     font-weight: normal;
     text-decoration: none;
-    text-transform: capitalize;
+    display: inline-block;
     background-color: #f8f6f4;
     border: 1px solid #736a60;
-    padding: 6px 10px;
-    display: inline-block;
-    margin-left: 10px;
+    text-transform: capitalize;
   }
 }
 
-*:focus,
-*:active { outline: none;  }
-
-input::-moz-focus-inner { border: 0; }
-@media \0screen   { img { width: auto; } } 
+:focus,
+:active  {outline:none;}
+::-moz-focus-inner {border:0;}
 
 body, 
 input:focus,
@@ -46,4 +44,11 @@ textarea:focus {
     color: #fff;
     background: #333;
     text-shadow: none;
+}
+
+#{headings()} {
+  a,
+  a:hover {
+    color: inherit;
+  }
 }
