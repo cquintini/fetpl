@@ -8,10 +8,23 @@
   &:hover { text-decoration: none; }
 }
 
-// #color state
-.color-state {
-  &.is-primary {  }
-  &.is-meta    {  }
+a.text-primary,
+.text-highlight {
+  color: $color-brand;
+  &:hover { text-decoration: none; }
+}
+
+
+.brdr-primary { border-bottom: 10px solid $color-brand; }
+
+.text-muted {
+  a {
+    color: $color-base;
+    &:hover {
+      color: $color-brand;
+      text-decoration: underline;
+    }
+  }
 }
 
 // #clearfix
@@ -36,12 +49,16 @@
     height: 0; 
 }
 
+
 // #positions 
-.pos-fxd { position: fixed; }
+.pos-fxd { position: fixed;    }
 .pos-rlv { position: relative; }
 
+%abs-fit-all { @include absolute(0,0,0,0); }
+%fxd-fit-all { @include fixed(0,0,0,0);    }
+
 // #margin
-.m-0 { margin: 0; }
+.m-0 { margin: 0 !important; }
 @for $i from 1 through 30 { .m-#{$i} { margin: 1px * $i; } }
 @for $i from 1 through 30 { .m--#{$i} { margin: -1px * $i; } }
 
@@ -87,7 +104,10 @@
 @for $i from 1 through 30 { .m--l#{$i} { margin-left: -1px * $i; } }
 
 // #padding
-.p-0 { padding: 0; }
+.p-0 { padding: 0 !important; }
+.p-l0 { padding-left: 0 !important;  }
+.p-r0 { padding-right: 0 !important;  }
+.p-rl0 { padding-right: 0 !important; padding-left: 0 !important;   }
 @for $i from 1 through 30 { .p-#{$i} { padding: 1px * $i; } }
 
 // #padding-top
@@ -132,15 +152,25 @@
 @for $i from 1 through 30 { .l--#{$i} { left: -1px * $i; } }
 
 // #center block elements
-%center-block {
-  float: none;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+%center-it {
+  float: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
+.centered { @extend %center-it; }
+
 
 // #img-center
 %img-center {
   margin: auto;
-  @include absolute(0, 0 ,0, 0);
+  @extend %abs-fit-all;
 }
+
+// forms helpers
+.resize-none { resize: none; }
+
+// #sizes
+.mw-170 { max-width: 170px; }
+
+// #stick
+.stick-it { position: absolute; }
