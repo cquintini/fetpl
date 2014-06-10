@@ -34,6 +34,10 @@ Watch
 grunt
 ```
 
+## Set new url
+```
+git remote set-url origin URL-HERE
+```
 
 
 ## Contributors
