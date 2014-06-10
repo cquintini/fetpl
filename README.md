@@ -24,10 +24,10 @@ Download from one of the following options:
 3. [Download](https://github.com/ikantam/fetpl/archive/master.zip) as .zip
 
 
-## Installing Grunt
+## Installation
 
 ```
-npm install
+npm install grunt grunt-contrib-concat grunt-contrib-watch grunt-contrib-compass grunt-contrib-uglify --save-dev
 ```
 Watch
 ```
