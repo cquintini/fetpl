@@ -185,3 +185,14 @@ $bottom: $position-default-bottom, $left: $position-default-left) {
 $bottom: $position-default-bottom, $left: $position-default-left) {
   @include _position(fixed, $top, $right, $bottom, $left);
 }
+
+
+$fw: null !default;
+$fs: null !default;
+$lh: null !default;
+$ff: null !default;
+
+@mixin font-variant($fw: $font-weight, $fs: $font-size, $lh: $line-height, $ff: $font-family){
+  font: $fw #{$fs}/#{$lh} $ff;
+}
+// Usage: @include font-variant($fw, $fs, $lh, $ff);
