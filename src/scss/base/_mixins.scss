@@ -10,7 +10,7 @@
       color: $rgba;
     }
     
-    @else if $property == bg , background {
+    @else if $property == background {
       background-color: transparent;
       background-color: $rgba;
       filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
@@ -19,10 +19,10 @@
 }
 
 // [ icon: size and background position ]
-@mixin icon($h, $w, $bp) {
+@mixin icon($bp, $w, $h) {
+  background-position: $bp;
   width: $w;
   height: $h;
-  background-position: $bp;
 }
 // Usgae: @include icon(20px, 10px, 20px 40px);
 
@@ -72,6 +72,17 @@
      height: $size;
      overflow: hidden;
      @include border-radius(100%); 
+}
+
+@mixin avatar($type, $size) {
+  width: $size;
+  height: $size;
+  @if $type == circle {
+    @extend %border-radius-circle;
+  }
+  @if $type == rounded {
+    @extend %border-radius-base;
+  }
 }
 
 // #breakpoint
@@ -196,3 +207,65 @@ $ff: null !default;
   font: $fw #{$fs}/#{$lh} $ff;
 }
 // Usage: @include font-variant($fw, $fs, $lh, $ff);
+
+@mixin animation-name($name) {
+  -o-animation-name: $name;
+  -moz-animation-name: $name;
+  -webkit-animation-name: $name;
+  animation-name: $name;
+}
+@mixin animation-duration($duration) {
+  -o-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+@mixin animation-duration($duration) {
+  -o-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+@mixin animation-timing-function($timing) {
+  -o-animation-timing-function: $timing;
+  -moz-animation-timing-function: $timing;
+  -webkit-animation-timing-function: $timing;
+  animation-timing-function: $timing;
+}
+@mixin animation-iteration-count($count) {
+  -o-animation-iteration-count: $count;
+  -moz-animation-iteration-count: $count;
+  -webkit-animation-iteration-count: $count;
+  animation-iteration-count: $count;
+}
+@mixin animation-direction($direction) {
+  -o-animation-direction: $direction;
+  -moz-animation-direction: $direction;
+  -webkit-animation-direction: $direction;
+  animation-direction: $direction;
+}
+@mixin animation-fill-mode($fill) {
+  -o-animation-fill-mode: $fill;
+  -moz-animation-fill-mode: $fill;
+  -webkit-animation-fill-mode: $fill;
+  animation-fill-mode: $fill;
+}
+@mixin animation-play-state($state) {
+  -o-animation-play-state: $state;
+  -moz-animation-play-state: $state;
+  -webkit-animation-play-state: $state;
+  animation-play-state: $state;
+}
+@mixin animation($animation) {
+  -o-animation: $animation;
+  -moz-animation: $animation;
+  -webkit-animation: $animation;
+  animation: $animation;
+}
+
+@mixin animation-delay($delay) {
+  -o-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  -webkit-animation-delay: $delay;
+  animation-animation-delay: $delay;
+}
