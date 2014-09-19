@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
     $_GET['id'] = isset($_GET['id']) ? $_GET['id'] : 'home';
     $id = $_GET['id'];
 ?>
