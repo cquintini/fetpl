@@ -1,5 +1,7 @@
-﻿<?php require_once 'header.php'; ?>
+<?php require_once 'header.php'; ?>
 
-<?php // CONTENT GOES HERE ?>
+<div id="page-wrapper">
+    <?php require_once 'tpl/pages/' . $id . '.php'  ?>
+</div>
 
 <?php require_once 'footer.php' ?>
