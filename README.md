@@ -11,6 +11,12 @@ Front-end Template Starter
 - [jQuery UI Touch Punch](http://touchpunch.furf.com/) *(small hack that enables the use of touch events)*
 - Preprocessor (SCSS & Compass)
 
+## Get Started
+
+* `git clone https://github.com/ikantam/fetpl.git`
+* or [Download ZIP](/ikantam/fetpl/archive/master.zip)
+
+
 ## Installation
 
 ```
@@ -21,9 +27,9 @@ Watch
 grunt
 ```
 
-## Set new url
+## Set new url (Switch repository url to a new one)
 ```
-git remote set-url origin URL-HERE
+git remote set-url origin URL-GOES-HERE
 ```
 
 ## Contributors
