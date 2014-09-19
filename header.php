@@ -1,4 +1,8 @@
-﻿<?php require_once 'inc/config/all.php'; ?>
+<?php
+    $_GET['id'] = isset($_GET['id']) ? $_GET['id'] : 'home';
+    $id = $_GET['id'];
+?>
+<?php require_once 'inc/config/all.php'; ?>
 <!DOCTYPE html>
 <!--[if !IE]><!--><script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';}</script><!--<![endif]-->
 <!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -8,7 +12,7 @@
 <head> 
    	<meta charset="utf-8">
   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Title &equiv; Project</title>
+	<title><?php echo current_title() . ' | ' . BRAND; ?></title>
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta name="description" content="Project description">
 	<link rel="apple-touch-icon" href="apple-touch-icon.png">
