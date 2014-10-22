@@ -55,6 +55,7 @@ HTML attributes should come in this particular order for easier reading of code.
 ```
 
 ### Boolean attributes
+
 A boolean attribute is one that needs no declared value. XHTML required you to declare a value, but HTML5 has no such requirement.  In short, don't add a value.
 
 ```html
@@ -93,7 +94,7 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 * Don't prefix property values or color parameters with a leading zero (e.g., `.5` instead of `0.5` and `-.5px` instead of `-0.5px`).
 * Lowercase all hex values, e.g., `#fff`.
 * Use shorthand hex values where available, e.g., `#fff` instead of `#ffffff`.
-* Quote attribute values in selectors, e.g., `input[type="text"]`.  [They’re only optional in some cases](https://mathiasbynens.be/notes/unquoted-attribute-values#css), and it’s a good practice for consistency.
+* Quote attribute values in selectors, e.g., `input[type="text"]`. [They’re only optional in some cases](https://mathiasbynens.be/notes/unquoted-attribute-values#css), and it’s a good practice for consistency.
 * Avoid specifying units for zero values, e.g., `margin: 0;` instead of `margin: 0px;`.
 
 ### Declaration order
@@ -177,6 +178,7 @@ Often times we don't need to set all the values a shorthand property represents.
 
 The Mozilla Developer Network has a great article on [shorthand properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) for those unfamiliar with notation and behavior.
 
+
 ```css
 /* Bad example */
 .element {
@@ -193,7 +195,8 @@ The Mozilla Developer Network has a great article on [shorthand properties](http
   background-image: url("image.jpg");
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-}```
+}
+```
 
 ### Nesting in Less and Sass
 
