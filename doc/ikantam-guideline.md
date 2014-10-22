@@ -1,4 +1,4 @@
-# Ikantam Guidelines v0.1.0
+# Ikantam Frontend Guidelines v0.1.0
 
 ## HTML
 
