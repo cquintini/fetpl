@@ -26,6 +26,23 @@ For more information, [read this awesome Stack Overflow article](http://stackove
 ### Character encoding 
 `<meta charset="UTF-8">`
 
+### Comments
+```html
+<!--
+# #######################
+# SECTION COMMENT HEADING
+# #######################
+-->
+
+<!--
+* TODO: HERE GOES TODO DESCRIPTION
+* AND THIS IS THE SECOND LINK OF IT
+* *********************************
+-->
+
+<!-- [ BLOCK COMMENT ] -->
+```
+
 ### CSS and JavaScript includes 
 
 Per HTML5 spec, typically there is no need to specify a `type` when including CSS and JavaScript files as `text/css` and `text/javascript` are their respective defaults.
