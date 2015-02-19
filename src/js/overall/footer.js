@@ -1,2 +1,3 @@
- 	}); // end doc ready
+ 	
+	}); 
 })(jQuery); 

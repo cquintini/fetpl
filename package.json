@@ -1,5 +1,19 @@
 {
-  "name": "fetpl",
-  "version": "0.1.0",
-  "devDependencies": {}
+  "name": "grunt-ik",
+  "version": "0.3.0",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-compass": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "load-grunt-config": "*",
+    "grunt-newer": "*",
+    "time-grunt": "*",
+    "load-grunt-tasks": "*",
+    "grunt-notify": "*"
+  },
+  "dependencies": {
+    "time-grunt": "*"
+  }
 }

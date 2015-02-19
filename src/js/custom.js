@@ -1,22 +1,23 @@
-/* [ placeholder for oldeIE ] */
-$('.ie8 [placeholder], .ie9 [placeholder]').focus(function() {
-    var input = $(this);
-    if (input.val() == input.attr('placeholder')) {
-        input.val('');
-        input.removeClass('placeholder');
-    }
-}).blur(function() {
-    var input = $(this);
-    if (input.val() == '' || input.val() == input.attr('placeholder')) {
-        input.addClass('placeholder');
-        input.val(input.attr('placeholder'));
-    }
-}).blur().parents('form').submit(function() {
-    $(this).find('[placeholder]').each(function() {
-        var input = $(this);
-        if (input.val() == input.attr('placeholder')) {
-            input.val('');
-        }
-    })
+// [ documentations ]
+$('.doc-sidebar a').on('click', function(){
+    var $this = $(this);
+        _attr = $this.attr('href');
+    $('.callout-demo').addClass('hidden');
+    $(_attr).removeClass('hidden');
+    $('.doc-sidebar a').removeClass('active');
+    $this.addClass('active');
+  return false;
 });
 
+// js-helper_jumper
+$('[data-jumper]').on('click', function () {
+    var $this = $(this), _target;
+    if ((typeof $this.attr('href')) !== 'undefined') {
+        _target = $this.attr('href');
+    }  else { _target = $this.attr('data-jumper'); }
+
+    $('html, body').animate({
+        scrollTop: $(_target).offset().top
+    }, 800);
+    return false;
+});

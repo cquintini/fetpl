@@ -1,164 +1,18 @@
-// [ @mixins ]
-
-// Color and Background rgba with fallback
-@mixin alpha-variant($property, $color, $alpha) {
-    $rgba: rgba($color, $alpha);
-    $ie-hex-str: ie-hex-str($rgba);
-  
-    @if $property == color {
-      color: $color;
-      color: $rgba;
-    }
-    
-    @else if $property == background {
-      background-color: transparent;
-      background-color: $rgba;
-      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
-      zoom: 1;
-    }
-}
-
-// [ icon: size and background position ]
-@mixin icon($bp, $w, $h) {
-  background-position: $bp;
-  width: $w;
-  height: $h;
-}
-// Usgae: @include icon(20px, 10px, 20px 40px);
-
-// Center an element with absolute position 
-@mixin abs-center($dir, $el-width, $el-height) {
-  position: absolute;
-  @if $dir == hzl {
-    left: 50%;
-    margin-left: (- $el-width / 2);
-  }
-  @else if $dir == vcl {
-    top: 50%;
-    margin-top: (- $el-height / 2);
-  }
-  @else if $dir == ctr {
-    top: 50%;
-    left: 50%;
-    margin-top: (- $el-height / 2);
-    margin-left: (- $el-width / 2);
-  }
-}
-// Usgae
-//@include abs-center(hzl, xpx, null)
-//@include abs-center(vcl, null, xpx)
-//@include abs-center(ctr, xpx, xpx)
-
-// keyframes Mixin
-@mixin keyframes($name) {
-  @-webkit-keyframes #{$name} { @content; }
-  @-moz-keyframes #{$name}    { @content; }
-  @-ms-keyframes #{$name}     { @content; }
-  @keyframes #{$name}         { @content; } 
-}
-
-// Vendor Prefixing
-@mixin vendorize($property, $value) {
-    -webkit-#{$property}: $value;
-    -moz-#{$property}: $value;
-    -ms-#{$property}: $value;
-    -o-#{$property}: $value;
-    #{$property}: $value;
-}
+// mixins
+// --------------------------------------------------
 
 // Rounded Box
 @mixin circle($size) {
-     width: $size;
-     height: $size;
-     overflow: hidden;
-     @include border-radius(100%); 
+   width: $size;
+   height: $size;
+   @include border-radius(100%); 
 }
 
-@mixin avatar($type, $size) {
+// Avatar
+@mixin avatar($size) {
   width: $size;
   height: $size;
-  @if $type == circle {
-    @extend %border-radius-circle;
-  }
-  @if $type == rounded {
-    @extend %border-radius-base;
-  }
-}
-
-// #breakpoint
-@mixin breakpoint($point) {
-
-  // mid-devices = 998px and below
-  @if $point == mid-devices {
-    @media (max-width: $midDevices) { @content; }
-  }
-  
-  // mid-devices = 1150px and below
-  @if $point == range-screen {
-    @media (max-width: $rangeSize) { @content; }
-  }
-
-  // large-screen = 1200 and above
-  @else if $point == large-screen {
-    @media (min-width: $largeScreen) { @content; }
-  } 
-
-  // desktop = 1200 and below
-  @else if $point == desktop {
-    @media (max-width: $largeScreen) { @content; }
-  } 
-
-  // tablet = 768px and below
-  @else if $point == tablet {
-    @media (max-width: $tablet) { @content; }
-  }
-  
-  // small devices = 660px and below
-  @else if $point == sm-devices {
-    @media (max-width: $smDevices) { @content; }
-  }
-
-  // mobile = 480 and below
-  @else if $point == mobile {
-    @media (max-width: $landtoPort)  { @content; }
-  } 
-}
-                    
-
-// #triangle
-@mixin triangle($dir, $color, $size) {
- 
-  @if $dir == "left" {
-    border-bottom: $size solid transparent;
-    border-right: $size solid $color;
-    border-top: $size solid transparent;
-  }
-  @else if $dir == "right" {
-    border-bottom: $size solid transparent;
-    border-left: $size solid $color;
-    border-top: $size solid transparent;
-  }
-  @else if $dir == "up" {
-    border-bottom: $size solid $color;
-    border-left: $size solid transparent;
-    border-right: $size solid transparent;
-  }
-  @else if $dir == "down" {
-    border-right: $size solid transparent;
-    border-left: $size solid transparent;
-    border-top: $size solid $color;
-  }
- 
-  height: 0;
-  width: 0;
-}
-
-// #truncate text
-@mixin text-truncate($boxSize) {
-    width: $boxSize;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  @include border-radius(100%);
 }
 
 $position-default-top:    null !default;
@@ -198,16 +52,24 @@ $bottom: $position-default-bottom, $left: $position-default-left) {
 }
 
 
-$fw: null !default;
-$fs: null !default;
-$lh: null !default;
-$ff: null !default;
-
-@mixin font-variant($fw: $font-weight, $fs: $font-size, $lh: $line-height, $ff: $font-family){
-  font: $fw #{$fs}/#{$lh} $ff;
+// keyframes Mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} { @content; }
+  @-moz-keyframes #{$name}    { @content; }
+  @-ms-keyframes #{$name}     { @content; }
+  @keyframes #{$name}         { @content; } 
 }
-// Usage: @include font-variant($fw, $fs, $lh, $ff);
 
+// Vendor Prefixing
+@mixin vendorize($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
+}
+
+// Animation Mixins
 @mixin animation-name($name) {
   -o-animation-name: $name;
   -moz-animation-name: $name;
@@ -268,4 +130,25 @@ $ff: null !default;
   -moz-animation-delay: $delay;
   -webkit-animation-delay: $delay;
   animation-animation-delay: $delay;
+}
+
+@mixin responsive-table(){
+  .table_heading {
+    display: none;
+  }
+  td {
+    padding: 10px;
+    display: block;
+    text-align: left;
+    line-height: 100%;
+    border: 0 !important;
+    &.has-th {
+      &:before {
+        content: attr(data-th)" : ";
+        display: inline-block;
+        font-weight: bold;
+        margin-right: 5px;
+      }
+    }
+  }
 }

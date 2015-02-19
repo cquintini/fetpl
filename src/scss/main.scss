@@ -5,7 +5,10 @@
  
 // Compass: CSS Authoring Framework.
 @import "compass", 
-	"compass/css3";
+        "compass/css3";
+
+// frontend framework
+@import "bootstrap";
 		
 // Base: fonts, scss (functions, mixins, variables).
 @import "base/all";
@@ -14,7 +17,10 @@
 @import "modules/all";	
 
 // Tools: tools are helper classes and miscellaneous setup.
-@import "tools/all";	
+@import "tools/all";
+
+
+// @import "vendors/jquery-ui";
 
 
 

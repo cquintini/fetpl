@@ -1,6 +1,7 @@
-// ============[ @functions ]============
+// @functions
+// --------------------------------------------------
 
-// #calculation 
+// Calculation 
 @function calc-addPixels($some-number, $another-number){
   @return $some-number + $another-number
 }
@@ -16,15 +17,3 @@
 @function calc-percent($target, $container) {
   @return ($target / $container) * 100%;
 }
-
-// #Black & White
-@function black($opacity){
-    @return rgba(0,0,0,$opacity)
-}
-@function white($opacity){
-    @return rgba(250,250,250,$opacity)
-}
-
-// Usage
-// background: black(.15);
-// color: white(.9);
