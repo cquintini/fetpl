@@ -1,4 +1,4 @@
-# Front-end Template Starter v3
+# Front-end Template Starter v3.1
 
 ## Get Started
 Choose one of the following options:
