@@ -15,19 +15,24 @@ Choose one of the following options:
 * An optimized Google Analytics snippet.
 * Preprocessor (SCSS & Compass)
 
+
+## Requirements
+
+* Make sure you have [nodejs](http://nodejs.org/download/) installed on your  machine.
+* PHP 5.4.*
+* Gruntjs [installing the cli](http://gruntjs.com/getting-started#installing-the-cli)
+  
 ## Installation
 
-1. Make sure you have [nodejs](http://nodejs.org/download/) installed on your  machine.
-
-2. Change the direcoty where your project located
+1. Change the directory where your project's located
 
   ```
   $ cd project
   ```
 
-3. Install grunt dependencies
+2. Install grunt dependencies
  
- 3.1. Windows
+ 2.1. Windows
  	* Install
   ```
   $ bin\win-start-project.bat
@@ -37,7 +42,7 @@ Choose one of the following options:
   $ bin\ln-update-project.bat
   ```
  
- 3.2. Linux
+ 2.2. Linux
  	* Install
   ```
   $ bin\ln-start-project.bat
@@ -53,7 +58,7 @@ grunt
 ```
 
 ## Project setup
-`ik-configs.php` This file is located in the root of your Project file directory and contains base configuration details,
+**`ik-configs.php`** This file is located in the root of your Project file directory and contains base configuration details,
 Brand Name, Logo, Google Analytics ID, CSS and Javascript (CDN and local) files.
 
 ## Switch repository

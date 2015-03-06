@@ -1,24 +1,13 @@
-<?php
-$excutePages = !isHome();
-if($excutePages): ?>
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container md-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/?id=home">
-              <img src="<?php echo getParam('logo'); ?>" alt="<?php echo getParam('brand'); ?>" />
-            </a>
-        </div>
-        <div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="?id=sign-in">Sign in</a></li>
-            </ul>
-        </div>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="?id=home">
+        <!-- TODO: remove the following inline style from the `<img> tag` -->
+        <img src="<?php echo getParam('logo')?>" alt="<?php echo getParam('brand')?>" style="margin-top: 7px;"/>
+      </a>
     </div>
+    <div class="collapse navbar-collapse">
+      <?php get_menu('primary'); ?>
+    </div>
+  </div>
 </nav>
-<?php endif; ?>

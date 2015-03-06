@@ -46,7 +46,9 @@ function getPartial($partial){
   }
 }
 function get_menu($type){
+  include 'tpl/config/navigations.php';
   include 'tpl/partials/' . $type . '_menu.php';
+  
 }
 
 function getConfigs(){
@@ -57,14 +59,3 @@ function getParam($name = '')
 {
   return getConfigs()['params'][$name];
 }
-
-/*function getStylesheets(){
-  $string = '';
-  foreach (getConfigs()['stylesheets']['cdn'] as $link){
-    $string .= "<link href='".$link."' rel='stylesheet' type='text/css'>";
-  }
-  foreach (getConfigs()['stylesheets']['local'] as $link){
-    $string .= "<link href='".$link."' rel='stylesheet' type='text/css'>";
-  }
-  return $string;
-}*/

@@ -1,14 +1,11 @@
-<?php
+<?php 
 // Primary Navigation Menu
 // --------------------------------------------------
 $primary_menu = array(
     array(
-      "link_href"  => "",
-      "link_text"  => "",
-      "link_class" => "",
-      "sub_menu"   => array(
-        [ "link_text" => "", "link_url" => "" ]
-      )
+      "link_href"  => "/doc",
+      "link_text"  => "Documentations",
+      "link_class" => "btn btn-primary btn-sm"
     )
 );
 

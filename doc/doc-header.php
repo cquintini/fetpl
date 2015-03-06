@@ -9,11 +9,11 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/doc">
-                <?php echo getParam('brand') . ' Style Guide and Documentation';?>
+                <?php echo getParam('brand') . ' ~ Style Guide and Documentation';?>
             </a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/">Home</a></li>
+            <li><a href="/?id=home">Home</a></li>
             <li><a href="?id=base-style">Base Style</a></li>
             <li><a href="?id=components">Components</a></li>
             <li><a href="?id=utilities">Utilities</a></li>
