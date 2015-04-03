@@ -16,9 +16,9 @@ Choose one of the following options:
 * Preprocessor (SCSS & Compass)
 
 
-## Requirements
+## Prerequisites
 
-* Make sure you have [nodejs](http://nodejs.org/download/) installed on your  machine.
+* Make sure you have [nodejs](http://nodejs.org/download/) installed on your machine.
 * PHP 5.4.*
 * Gruntjs [installing the cli](http://gruntjs.com/getting-started#installing-the-cli)
   
